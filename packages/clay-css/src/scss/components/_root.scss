@@ -55,3 +55,16 @@
 		@include clay-css($c-dark-high-contrast);
 	}
 }
+
+@if (variable-exists(c-light-high-contrast)) {
+	@media (prefers-color-scheme: light) and (prefers-contrast: more) {
+		:root {
+			@include clay-css($c-light-high-contrast);
+		}
+	}
+
+	[data-color-scheme='light-high-contrast']:root,
+	:root [data-color-scheme='light-high-contrast'] {
+		@include clay-css($c-light-high-contrast);
+	}
+}
